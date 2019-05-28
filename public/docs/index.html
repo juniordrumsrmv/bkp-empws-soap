@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript","php"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                                  <a href="#" data-language-name="php">php</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Criado por Emporium Devs</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Bem vindo a documentação do Emporium API
+<a href="http://localhost/docs/collection.json">Baixe o Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Tickets</h1>
+<p>Serviços para informações de vendas</p>
+<!-- START_e503e0e2b2931a146fcd5e2c452efd47 -->
+<h2>Busca de cupons por loja e data</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost/empws/ticket/date" \
+    -H "Content-Type: application/json" \
+    -d '{"empresa":"impedit","dataMovimento":"harum","loja":11}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("http://localhost/empws/ticket/date");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "empresa": "impedit",
+    "dataMovimento": "harum",
+    "loja": 11
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post("empws/ticket/date", [
+    'headers' =&gt; [
+            "Content-Type" =&gt; "application/json",
+        ],
+    'json' =&gt; [
+            "empresa" =&gt; "impedit",
+            "dataMovimento" =&gt; "harum",
+            "loja" =&gt; "11",
+        ],
+]);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 4,
+    "name": "Jessica Jones",
+    "roles": [
+        "admin"
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST empws/ticket/date</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empresa</td>
+<td>string</td>
+<td>required</td>
+<td>Nome da empresa</td>
+</tr>
+<tr>
+<td>dataMovimento</td>
+<td>date</td>
+<td>required</td>
+<td>Data fiscal</td>
+</tr>
+<tr>
+<td>loja</td>
+<td>integer</td>
+<td>required</td>
+<td>Loja</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e503e0e2b2931a146fcd5e2c452efd47 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                                    <a href="#" data-language-name="php">php</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
